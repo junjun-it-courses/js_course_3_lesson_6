@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    function padString(str, estimatedLength, symbol = '*', right = true) {
+        if(typeof(str) !== 'string') return 'Arg error';
+        if(typeof(estimatedLength) !== 'number') return 'Arg error';
+
+        if(str.length === estimatedLength) return str;
+        if(str.length > estimatedLength) return str.substring(0, estimatedLength);
+
+        if(typeof(symbol) !== 'string' || symbol.length !== 1) return 'Arg error';
+        if(typeof(right) !== 'boolean') return 'Arg error';
+
+
+
+        const symbolsCount = estimatedLength - str.length;
+        let stringOfSymbols = symbol.repeat(symbolsCount);
+        return right ? str + stringOfSymbols : stringOfSymbols + str;
+    }
+
+    const res = padString('hello', 8, '^', false);
+    const res2 = padString('hello', 8, '^');
+    const res3 = padString('hello', 8);
+    const res4 = padString('hello', 1);
+    const res5 = padString('hello', 5);
+
+    console.log(res)
+    console.log(res2)
+    console.log(res3)
+    console.log(res4)
+    console.log(res5)
+
+</script>
+
+
+</body>
+</html>

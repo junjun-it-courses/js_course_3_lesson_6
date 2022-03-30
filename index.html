@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let num = prompt('enter number');
+
+    if(num !== null && !isNaN(+num) && +num > 1) {
+
+        num = Number(num);
+        let simpleNumber = true;
+
+        for (let i = 2; i < num; i += 1) {
+            if(num % i === 0) {
+                simpleNumber = false;
+                break;
+            }
+        }
+
+        if(simpleNumber) {
+            alert('Число простое');
+        } else {
+            alert('НЕ простое');
+        }
+
+    } else {
+        alert('Не валидное значение')
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>
